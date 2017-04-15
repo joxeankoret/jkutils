@@ -17,6 +17,10 @@ So far, there are utilities for the following things:
   * query_utils: Utilities for constructing SQL language's "where" clauses.
   * web_db: Wrappers around web.py database utilities, for MySQL and SQLite.
 
+# How to use them?
+
+All python modules are independent. If you want to use one of the mentioned utilities in your project, just copy the .py file into your project's folder. That's all.
+
 # Examples
 
 ## Graphs
@@ -105,3 +109,40 @@ def test_find_paths():
 
 ```
 
+## Process
+
+This module contains only 1 function and 1 class: process_manager and TimeoutCommand.
+
+### Running multiple process in parallel
+
+The module function process_manager maintains running in parallel a total ammount of specified processes running some function and waiting for each thread to finish for a specified number of second(s).
+
+Example:
+
+```
+import time
+from process import process_manager
+
+def do_nothing():
+  try:
+    log("Doing nothing...")
+    time.sleep(1)
+  except KeyboardInterrupt:
+    print "Aborted."
+
+if __name__ == "__main__":
+  process_manager(2, do_nothing, [], 1)
+
+```
+
+### Running an operating system command with a timeout
+
+The class TimeoutCommand supports executing an operating system command with a specified timeout in seconds in Linux, Unix and Windows. Example:
+
+```
+from process import TimeoutCommand
+
+cmd = TimeoutCommand("/long/time/running_command -with -options")
+ret = cmd.run(timeout)
+print "Exit code %d" % ret
+```
