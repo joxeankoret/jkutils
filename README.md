@@ -4,7 +4,7 @@ These are my own Python utilities that I have been using over the last years. Be
 
 # License
 
-The libraries are released under LGPL 2.1, which means that you can use in commercial/closed-source software if you want.
+The libraries are released under LGPL 3, which means that you can use in commercial/closed-source software if you want.
 
 # What is in the package?
 
