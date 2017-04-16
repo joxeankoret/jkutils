@@ -12,6 +12,7 @@ So far, there are utilities for the following things:
 
   * graphs: Utility library to construct graphs, find sub-graphs, search paths, etc...
   * fuzzy_hashing: My own fuzzy hashing algorithms.
+  * factor: Primes and factorization utilities.
   * simple_log: Extremely simple logging utilities.
   * process: Simple process management utilities.
   * query_utils: Utilities for constructing SQL language's "where" clauses.
